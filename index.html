@@ -1,12 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Untuk mengakali cache github, biar langsung update setelah di push berkala -->
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Travel with TriTravel for the best experience you will never forget" />
+    <meta name="keywords" content="tritravel, travel agency, revou, fcse mini project" />
+
+    <title>eStartup</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"
+      integrity="sha512-24XP4a9KVoIinPFUbcnjIjAjtS59PUoxQj3GNVpWc86bCqPuy3YxAcxJrxFCxXe4GHtAumCbO2Ze2bddtuxaRw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <h1>
+              <a href="index.html"><span>e</span>Startup</a>
+            </h1>
+          </div>
+          <button class="menu-button" id="menu-button" onclick="toggleMenuButton()">
+            <i data-feather="menu"></i>
+          </button>
+          <ul class="navigation-list" id="menu-list">
+            <li><a href="#hero" onclick="setTitle(this)">Home</a></li>
+            <li><a href="#our-package" onclick="setTitle(this)">Our Package</a></li>
+            <li><a href="#call-us" onclick="setTitle(this)">Call Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main-content">
+      <div class="hero" id="hero">
+        <div class="hero-slider" id="hero-slider">
+          <img id="slide1" src="assets/images/banner1.jpg" alt="" />
+          <img id="slide2" src="assets/images/banner2.jpg" alt="" />
+          <img id="slide3" src="assets/images/banner3.jpg" alt="" />
+          <img id="slide4" src="assets/images/banner4.jpg" alt="" />
+          <img id="slide5" src="assets/images/banner5.jpg" alt="" />
+          <img id="slide6" src="assets/images/banner6.jpg" alt="" />
+          <img id="slide7" src="assets/images/banner1.jpg" alt="" />
+          <img id="slide8" src="assets/images/banner2.jpg" alt="" />
+        </div>
+        <div class="hero-wrapper">
+          <h1 class="main-title">Your Trusted Travel Agent</h1>
+          <p class="hero-description">Your happiness is our happiness</p>
+          <button class="button" onclick="getStartButton()">Get started!</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="about-contact" id="about">
+          <div class="about">
+            <img src="assets/images/promotional.jpg" alt="A beach in Bali during dusk, with some peoples playing" class="about-img" />
+            <p class="about-caption">Liburan jadi lebih menyenangkan karena TriTravel memberikan yang terbaik pada pengguna</p>
+            <div class="about-author">
+              <img src="assets/images/avatar.jpg" alt="" class="author-img" />
+              <div class="author-data">
+                <div class="author-name">Jennie Richardson</div>
+                <div class="author-info">Software Engineer, 27</div>
+              </div>
+            </div>
+            <hr class="border" />
+            <div class="feature">
+              <h2 class="subsection-title">Beberapa keuntungan yang Anda akan dapatkan dengan menggunakan jasa kami:</h2>
+              <div class="feature-list">
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i data-feather="globe"></i>
+                  </div>
+                  <div class="feature-description">Tersedia perjalanan ke banyak tempat destinasi terbaik di dunia</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i data-feather="globe"></i>
+                  </div>
+                  <div class="feature-description">Pemesanan dan pembayaran yang mudah, cepat, dan dapat dilakukan kapan saja dan dimana saja</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i data-feather="globe"></i>
+                  </div>
+                  <div class="feature-description">Ada tawaran-tawaran menarik yang menanti untuk perjalanan Anda selanjutnya</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i data-feather="globe"></i>
+                  </div>
+                  <div class="feature-description">Uang kembali hingga 90% jika Anda batal melakukan perjalanan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact">
+            <h2 class="subsection-title">Contact Us</h2>
+            <p>Sales akan menghubungi Anda 1x24 jam setelah data anda kami terima</p>
+            <form class="contact-form" name="contact-form" onsubmit="return validateForm()">
+              <div class="form-field">
+                <label for="name" class="input-label">Your name:</label>
+                <input type="text" id="name" name="name" class="input-field" placeholder="First name and last name" oninput="fillInput('name')" />
+                <p class="error-msg" id="name-error">Please fill your name</p>
+              </div>
+              <div class="form-field">
+                <label for="email" class="input-label">Email Address:</label>
+                <input type="text" id="email" name="email" class="input-field" placeholder="example@email.com" oninput="fillInput('email')" />
+                <p class="error-msg" id="email-error">Please fill your email with a correct format</p>
+              </div>
+              <div class="form-field">
+                <label for="interest" class="input-label">What are you interested in?</label>
+                <select id="interest" name="interest" class="input-field" oninput="selectInterest()">
+                  <option value="none" selected disabled>Select option</option>
+                  <option value="option 1">Destinasi Pantai (Swimming/Surfing)</option>
+                  <option value="option 2">Destinasi Gunung (Hiking)</option>
+                  <option value="option 3">Destinasi Hutan (Camping/Fishing)</option>
+                </select>
+                <p class="error-msg" id="interest-error">Please select one interest</p>
+              </div>
+              <button type="submit" class="button">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="package" id="our-package">
+        <div class="package-banner">
+          <div class="container">
+            <h2 class="section-title">Our Packages</h2>
+          </div>
+        </div>
+        <div class="container">
+          <div class="package-list">
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="compass"></i>
+              </div>
+              <div class="package-content">
+                <h3>Bali</h3>
+                <p>Kunjungi cagar budaya, kuliner, pantai, dan tempat wisata yang menarik lainnya di Bali</p>
+              </div>
+            </div>
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="compass"></i>
+              </div>
+              <div class="package-content">
+                <h3>Miami</h3>
+                <p>Kunjungi cagar alam buaya, kuliner, pantai, dan tempat wisata yang menarik lainnya di Miami</p>
+              </div>
+            </div>
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="compass"></i>
+              </div>
+              <div class="package-content">
+                <h3>Moscow</h3>
+                <p>Kunjungi cagar budaya, bangunan bersejarah, dan tempat wisata yang menarik lainnya di Moscow</p>
+              </div>
+            </div>
+          </div>
+          <hr class="border" />
+          <div class="package-list">
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="star"></i>
+              </div>
+              <div class="package-content">
+                <h3>Destinasi Gunung</h3>
+                <p>Lakukan hiking ke atas gunung atau camping di atas gunung</p>
+              </div>
+            </div>
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="star"></i>
+              </div>
+              <div class="package-content">
+                <h3>Pantai</h3>
+                <p>Lakukan swimming di sekitar pantai atau surfing di ombak</p>
+              </div>
+            </div>
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="star"></i>
+              </div>
+              <div class="package-content">
+                <h3>Hutan</h3>
+                <p>Lakukan camping bersama hantu hutan, seperti genderuwo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cta" id="call-us">
+        <div class="container">
+          <h2 class="section-title">Talk with Us</h2>
+          <p>Ingin memesan perjalanan? Ada kendala yang perlu dibantu? Silakan hubungi kami dengan menekan tombol di bawah ini</p>
+          <button class="button">Hubungi Kami</button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="logo">
+          <img src="assets/tritravel-color.svg" alt="tritravel logo" width="192" />
+        </div>
+        <ul class="footer-navigation">
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        <div>© 2023 AenJojo</div>
+      </div>
+    </footer>
+
+    <script>
+      feather.replace();
+    </script>
+    <script src="js/validation.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/slideShow.js"></script>
+  </body>
 </html>
