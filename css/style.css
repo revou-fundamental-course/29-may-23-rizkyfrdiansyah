@@ -35,8 +35,8 @@
   --dark-200: #2f3749;
   --dark-300: #4c5361;
   --blue-light: #8bb0ff;
-  --blue-medium: #155df7;
-  --blue-dark: #0a3591;
+  --dark-medium: #000;
+  --blue-dark: #008000;
   --red: #e71414;
 
   scroll-behavior: smooth;
@@ -55,7 +55,7 @@
   text-transform: uppercase;
   font-weight: 700;
   border: 2px solid var(--blue-light);
-  background-color: var(--blue-medium);
+  background-color: var(--dark-medium);
   color: var(--light-100);
   border-radius: var(--size-1);
   font-family: inherit;
