@@ -3,6 +3,7 @@
 # eStartup
 
 Sebuah perusahaan rintisan yang memanfaatkan teknologi digital untuk menciptakan solusi dari permasalahan bangsa.
+https://revou-fundamental-course.github.io/29-may-23-rizkyfrdiansyah/
 
 # TOOLS
 
