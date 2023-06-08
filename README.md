@@ -29,16 +29,21 @@ Sebuah perusahaan rintisan yang memanfaatkan teknologi digital untuk menciptakan
 `Mobile`
 
 1. Home page
+
    ![](/assets/mobile.png)
 
 2. Feedback Customer
+
    ![](</assets/mobile%20(1).png>)
 
 3. Contact Us
+
    ![](</assets/mobile%20(2).png>)
 
 4. Features
+
    ![](</assets/mobile%20(3).png>)
 
 5. Footer
+
    ![](</assets/mobile%20(4).png>)
